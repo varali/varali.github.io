@@ -62,20 +62,20 @@ body {
   }
 }
 
-.card {
-  padding: 2em;
-}
-
 h1 {
   text-align: center;
   background-color: #ff8a5b;
   font-family: "Monoton";
-  font-size: 6vh;
+  font-size: 8vh;
   font-weight: 400;
   word-spacing: 30px;
   letter-spacing: -5px;
   padding: 2.4rem 0;
   overflow-wrap: break-word;
+}
+
+.map {
+  padding: 2em;
 }
 
 .add-form {
@@ -167,7 +167,7 @@ input[type="checkbox"] {
   background-color: #0077b6;
   color: #f8e9a1;
   text-align: center;
-  font-size: 3vh;
+  font-size: 2.6vh;
   font-weight: 500;
-  padding: 3.2rem 0;
+  padding: 2.2rem 0;
 }

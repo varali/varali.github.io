@@ -1,21 +1,16 @@
-import { useState } from "react";
 import "./App.css";
 import Logo from "./components/Logo";
 import Info from "./components/Info";
+import Map from "./components/Map";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const mapboxAccessToken =
+    "pk.eyJ1IjoiY3JuZXdib2xkIiwiYSI6ImNtN2NnYzZrYTBvcHEya3E4cWI0ajFtam0ifQ.macU8rj2--3ACPSKKlZ39g";
 
   return (
     <>
       <Logo />
-
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
-
+      <Map accessToken={mapboxAccessToken} />
       <Info />
     </>
   );
