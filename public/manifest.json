@@ -1,15 +1,20 @@
 {
-  "short_name": "Varali",
-  "name": "Varali Gihub Pages",
+  "short_name": "BlueDot",
+  "name": "BlueDot Precision",
   "icons": [
     {
-      "src": "/vite.svg",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/svg+xml"
+      "src": "/blue-location-1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
     }
   ],
   "start_url": ".",
+  "scope": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#FF8A5B",
+  "background_color": "#03045E",
+  "description": "BlueDot Precision Team Hackathon Project Q2 2025",
+  "dir": "ltr",
+  "lang": "en-US",
+  "orientation": "portrait-primary"
 }
