@@ -1,3 +1,3 @@
 export default function Logo() {
-  return <h1>🗺️ BlueDot Precision 🎯</h1>;
+  return <h1>💜 Hello, Cody 💅</h1>;
 }

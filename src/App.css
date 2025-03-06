@@ -2,12 +2,12 @@
 
 /*
 Color palette
-#F8E9A1 – Sunset Glow
-#FF8A5B – Warm Peach
-#0077B6 – Evening Blue
-#023E8A – Deep Azure
-#03045E – Midnight Blue
-#5a3e2b - Walnut Brown
+#0077B6 – Water
+#92B8FF – Jordy Blue
+#AECEFF – Pale Cornflower Blue
+#B29AE7 – Light Pastel Purple
+#A586E3 – Floral Lavender
+#9370DC - Medium Purple
 */
 
 * {
@@ -64,7 +64,7 @@ body {
 
 h1 {
   text-align: center;
-  background-color: #ff8a5b;
+  background-color: #b29ae7;
   font-family: "Monoton";
   font-size: 7vw;
   font-weight: 400;
@@ -79,7 +79,7 @@ h1 {
 }
 
 .add-form {
-  background-color: #ff8a5b;
+  background-color: #b29ae7;
   padding: 2.8rem 0;
   display: flex;
   align-items: center;
@@ -95,7 +95,7 @@ h3 {
 button,
 select,
 input {
-  background-color: #f8e9a1;
+  background-color: #aeceff;
   color: #5a3e2b;
   font-family: inherit;
   border: none;
@@ -112,8 +112,8 @@ input {
 }
 
 .list {
-  background-color: #023e8a;
-  color: #ffebb3;
+  background-color: #92b8ff;
+  color: #aeceff;
   padding: 4rem 0;
 
   display: flex;
@@ -151,7 +151,7 @@ input {
 input[type="checkbox"] {
   height: 2rem;
   width: 2rem;
-  accent-color: #ff8a5b;
+  accent-color: #b29ae7;
 }
 
 .list li button {
@@ -165,7 +165,7 @@ input[type="checkbox"] {
 
 .info {
   background-color: #0077b6;
-  color: #f8e9a1;
+  color: #aeceff;
   text-align: center;
   font-size: 2vw;
   font-weight: 500;
