@@ -2,6 +2,12 @@ import { useRef, useEffect } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 
+/* How to integrate */
+// import Map from "./components/Map";
+// const mapboxAccessToken =
+//   "pk.eyJ1IjoiY3JuZXdib2xkIiwiYSI6ImNtN2NnYzZrYTBvcHEya3E4cWI0ajFtam0ifQ.macU8rj2--3ACPSKKlZ39g";
+//  <Map accessToken={mapboxAccessToken} />
+
 export default function Map({ accessToken }) {
   const mapContainer = useRef(null);
 

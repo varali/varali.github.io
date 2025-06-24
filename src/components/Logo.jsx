@@ -1,3 +1,12 @@
-export default function Logo() {
-  return <h1>💜 Hello, Cody 💅</h1>;
+import { Link } from "react-router-dom";
+import styles from "./Logo.module.css";
+
+function Logo() {
+  return (
+    <Link to="/">
+      <img src="/logo-name.png" alt="Cody Nixon logo" className={styles.logo} />
+    </Link>
+  );
 }
+
+export default Logo;
