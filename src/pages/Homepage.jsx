@@ -16,8 +16,8 @@ export default function Homepage() {
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
-            Origin: "http://localhost:5174",
-            "Access-Control-Allow-Origin": "http://localhost:5174",
+            Origin: "https://varali.github.io/",
+            "Access-Control-Allow-Origin": "https://varali.github.io/",
           },
           mode: "cors",
         };
