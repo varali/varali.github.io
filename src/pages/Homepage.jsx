@@ -78,6 +78,81 @@ export default function Homepage() {
           <span className={styles.tag}>@feignedpoet</span>
         </div>
       </section>
+
+      <section className={styles.about} id="about">
+        <div className={styles.aboutImage}>
+          <div className={styles.imagePlaceholder}>
+            <span className={styles.imagePlaceholderGlyph}>✦</span>
+          </div>
+        </div>
+        <div className={styles.aboutContent}>
+          <span className={styles.sectionEyebrow}>✦ about</span>
+          <h2 className={styles.sectionHeading}>
+            who conjures <em>here</em>
+          </h2>
+          <div className={styles.aboutText}>
+            <p>
+              I&apos;m Cody — a senior mobile developer by day and a romantasy
+              reader by night, living somewhere in the overlap between clean
+              code and chaotic fiction.
+            </p>
+            <p>
+              On the dev side, I work on indoor navigation, IoT systems, and
+              consumer electronics — building the kind of invisible
+              infrastructure that makes apps accessible and speak every
+              language.
+            </p>
+            <p>
+              On the reading side, I run{" "}
+              <a
+                href="https://instagram.com/faerie.smut"
+                target="_blank"
+                rel="noreferrer"
+                className={styles.aboutLink}
+              >
+                @faerie.smut
+              </a>{" "}
+              — a bookstagram and content hub for romantasy lovers with taste.
+              I post reviews, memes, and the occasional unhinged take on books
+              that wrecked me. You can also find me on{" "}
+              <a
+                href="https://www.tiktok.com/@faerie.smut"
+                target="_blank"
+                rel="noreferrer"
+                className={styles.aboutLink}
+              >
+                TikTok
+              </a>
+              ,{" "}
+              <a
+                href="https://fable.co/fabler/faeriesmut-135289789263?tab=stats&period_type=year"
+                target="_blank"
+                rel="noreferrer"
+                className={styles.aboutLink}
+              >
+                Fable
+              </a>
+              , and{" "}
+              <a
+                href="https://www.goodreads.com/user/show/140371366-cody-nixon"
+                target="_blank"
+                rel="noreferrer"
+                className={styles.aboutLink}
+              >
+                Goodreads
+              </a>
+              .
+            </p>
+            <p>
+              When I&apos;m not writing code or consuming books at an
+              irresponsible rate, I&apos;m out skating, on a very long walk
+              with no particular destination, crocheting something I&apos;ll
+              probably never finish, or writing bad poetry. My cat remains
+              unimpressed by all of it.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

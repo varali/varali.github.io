@@ -104,3 +104,117 @@
   color: var(--color-text--primary);
   background-color: rgba(140, 122, 160, 0.08);
 }
+
+.about {
+  max-width: 110rem;
+  margin: 0 auto;
+  padding: 8rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 8rem;
+  align-items: center;
+  border-top: 1px solid var(--color-border);
+}
+
+.aboutImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  max-width: 32rem;
+  background-color: var(--color-forest--mid);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.imagePlaceholder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 30%, rgba(107, 63, 160, 0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 80% at 70% 80%, rgba(68, 47, 88, 0.15) 0%, transparent 70%);
+}
+
+.imagePlaceholderGlyph {
+  font-size: 3rem;
+  color: var(--color-purple--soft);
+  opacity: 0.2;
+  position: relative;
+  z-index: 1;
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.sectionEyebrow {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-purple--soft);
+}
+
+.sectionHeading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 4vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--color-text--primary);
+  margin-bottom: 0.8rem;
+}
+
+.sectionHeading em {
+  font-style: italic;
+  color: var(--color-purple--soft);
+}
+
+.aboutText {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.aboutText p {
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--color-text--muted);
+}
+
+.aboutLink {
+  color: var(--color-purple--soft);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(140, 122, 160, 0.3);
+  transition: all 0.2s;
+}
+
+.aboutLink:hover {
+  color: var(--color-text--primary);
+  border-bottom-color: var(--color-purple--soft);
+}
+
+@media (max-width: 768px) {
+  .about {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    padding: 6rem 2rem;
+  }
+
+  .imagePlaceholder {
+    max-width: 20rem;
+  }
+}
