@@ -8,15 +8,13 @@ function PageNav() {
       <Logo />
       <ul>
         <li>
-          <NavLink to="/schedule">Schedule</NavLink>
+          <NavLink to="/#about">About</NavLink>
         </li>
         <li>
-          <NavLink to="/journal">Journal</NavLink>
+          <NavLink to="/#reviews">Reviews</NavLink>
         </li>
         <li>
-          <NavLink to="/login" className={styles.ctaLink}>
-            Login
-          </NavLink>
+          <NavLink to="/#projects">Projects</NavLink>
         </li>
       </ul>
     </nav>

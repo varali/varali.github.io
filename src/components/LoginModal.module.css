@@ -1,0 +1,138 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background-color: rgba(38, 54, 52, 0.7);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.modal {
+  background-color: var(--color-forest--mid);
+  border: 1px solid var(--color-border--hover);
+  padding: 4rem 3.5rem;
+  width: 100%;
+  max-width: 40rem;
+  text-align: center;
+  position: relative;
+}
+
+.glyph {
+  font-size: 2.4rem;
+  color: var(--color-purple--soft);
+  margin-bottom: 1.6rem;
+  opacity: 0.7;
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--color-text--primary);
+  margin-bottom: 0.6rem;
+}
+
+.subheading {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: var(--color-text--muted);
+  margin-bottom: 3rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.input {
+  background-color: var(--color-forest--deep);
+  border: 1px solid var(--color-border);
+  color: var(--color-text--primary);
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  padding: 1.2rem 1.6rem;
+  text-align: center;
+  width: 100%;
+  transition: border-color 0.2s;
+}
+
+.input::placeholder {
+  color: var(--color-text--faint);
+  letter-spacing: 0.15em;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-purple--soft);
+  background-color: var(--color-forest--deep);
+}
+
+.inputError {
+  border-color: #7a3a3a;
+}
+
+.errorMsg {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: #b07070;
+  margin-top: -0.4rem;
+}
+
+.button {
+  background-color: transparent;
+  border: 1px solid var(--color-purple--soft);
+  color: var(--color-text--primary);
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  padding: 1.2rem;
+  transition: all 0.2s;
+  margin-top: 0.4rem;
+}
+
+.button:hover {
+  background-color: rgba(140, 122, 160, 0.12);
+  border-color: var(--color-purple--mid);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1.4rem;
+  right: 1.6rem;
+  background: none;
+  border: none;
+  color: var(--color-text--faint);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 0.4rem;
+}
+
+.closeBtn:hover {
+  color: var(--color-text--muted);
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-6px); }
+  80% { transform: translateX(6px); }
+}
+
+.shake {
+  animation: shake 0.5s ease-in-out;
+}
