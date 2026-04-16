@@ -1,0 +1,137 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-forest--mid);
+  border: 1px solid var(--color-border);
+  text-decoration: none;
+  transition: border-color 0.2s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to right, var(--color-purple--deep), var(--color-purple--soft));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  border-color: var(--color-border--hover);
+  transform: translateY(-2px);
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.cover {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  background-color: var(--color-forest--deep);
+}
+
+.coverImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.card:hover .coverImg {
+  transform: scale(1.03);
+}
+
+.coverPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 40%,
+    rgba(107, 63, 160, 0.15) 0%,
+    transparent 70%
+  );
+}
+
+.coverGlyph {
+  font-size: 3rem;
+  color: var(--color-purple--soft);
+  opacity: 0.2;
+}
+
+.content {
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex: 1;
+}
+
+.ratings {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.stars,
+.spice {
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-text--primary);
+  line-height: 1.2;
+}
+
+.author {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text--faint);
+}
+
+.firstLine {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--color-text--muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.tropes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+.trope {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: var(--color-purple--soft);
+  background-color: rgba(140, 122, 160, 0.1);
+  border: 1px solid rgba(140, 122, 160, 0.2);
+  padding: 0.3rem 0.8rem;
+}

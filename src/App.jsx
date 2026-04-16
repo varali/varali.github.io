@@ -1,14 +1,23 @@
-import { useState, useCallback } from "react";
-import { BrowserRouter, Routes, Route, Navigate, useNavigate } from "react-router-dom";
+import { useState, useCallback, useEffect } from "react";
+import { BrowserRouter, Routes, Route, Navigate, useNavigate, useLocation } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import PageNotFound from "./pages/PageNotFound";
 import Schedule from "./pages/Schedule";
 import Journal from "./pages/Journal";
 import Sanctum from "./pages/Sanctum";
+import Reviews from "./pages/Reviews";
 import LoginModal from "./components/LoginModal";
 import { useSpellCode } from "./hooks/useSpellCode";
 import { useAuth } from "./hooks/useAuth";
 import styles from "./App.module.css";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
 function ProtectedRoute({ isAuthed, children }) {
   if (!isAuthed) return <Navigate to="/" replace />;
@@ -33,8 +42,10 @@ function AppContent() {
 
   return (
     <>
+      <ScrollToTop />
       <Routes>
         <Route index element={<Homepage />} />
+        <Route path="reviews" element={<Reviews />} />
         <Route
           path="sanctum"
           element={

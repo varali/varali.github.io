@@ -1,6 +1,9 @@
 import { useMemo } from "react";
+import { Link } from "react-router-dom";
 import styles from "./Homepage.module.css";
 import PageNav from "../components/PageNav";
+import ReviewCard from "../components/ReviewCard";
+import { recentReviews } from "../data/reviews";
 
 const stoicQuotes = [
   "Never let the future disturb you. You will meet it, if you have to, with the same weapons of reason which today arm you against the present. -Marcus Aurelius",
@@ -152,6 +155,30 @@ export default function Homepage() {
             </p>
           </div>
         </div>
+      </section>
+
+      <section className={styles.reviewsTeaser} id="reviews">
+        <div className={styles.sectionHeader}>
+          <div>
+            <span className={styles.sectionEyebrow}>✦ the spellbook</span>
+            <h2 className={styles.sectionHeading}>
+              recent <em>reviews</em>
+            </h2>
+          </div>
+          <Link to="/reviews" className={styles.seeAll}>
+            see all reviews →
+          </Link>
+        </div>
+
+        {recentReviews.length === 0 ? (
+          <p className={styles.reviewsEmpty}>reviews coming soon.</p>
+        ) : (
+          <div className={styles.reviewsGrid}>
+            {recentReviews.map((review) => (
+              <ReviewCard key={review.title} review={review} />
+            ))}
+          </div>
+        )}
       </section>
     </main>
   );

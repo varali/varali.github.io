@@ -218,3 +218,68 @@
     max-width: 20rem;
   }
 }
+
+.reviewsTeaser {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 8rem 4rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+
+.seeAll {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: var(--color-purple--soft);
+  text-decoration: none;
+  transition: color 0.2s;
+  white-space: nowrap;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid rgba(140, 122, 160, 0.3);
+}
+
+.seeAll:hover {
+  color: var(--color-text--primary);
+  border-bottom-color: var(--color-purple--soft);
+}
+
+.reviewsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+  gap: 2.4rem;
+}
+
+.reviewsEmpty {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: var(--color-text--faint);
+  text-align: center;
+  padding: 4rem 0;
+}
+
+@media (max-width: 600px) {
+  .reviewsTeaser {
+    padding: 6rem 2rem;
+  }
+
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.6rem;
+  }
+
+  .reviewsGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+}
