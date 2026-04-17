@@ -32,18 +32,18 @@ function extractSpice(body) {
 
 function extractTropes(body) {
   const ratingLine = body.search(/[⭐️]+/);
-  const qotdLine = body.search(/💭❔QOTD:/);
+  const qotdLine = body.search(/(?:💭❔)?QOTD:/);
   if (ratingLine === -1 || qotdLine === -1) return [];
 
   const between = body.slice(ratingLine, qotdLine);
   return between
     .split("\n")
     .map((l) => l.trim())
-    .filter((l) => l && !l.match(/[⭐️🌶️🤎]/));
+    .filter((l) => l && !l.match(/[⭐🌶🤎❤]/u));
 }
 
 function extractQOTD(body) {
-  const match = body.match(/💭❔QOTD:\s*(.+)/);
+  const match = body.match(/(?:💭❔)?QOTD:\s*(.+)/);
   return match ? match[1].trim() : null;
 }
 
@@ -81,7 +81,7 @@ function extractOptionalQuote(body) {
 }
 
 function extractParagraphs(body) {
-  const qotdIdx = body.search(/💭❔QOTD:/);
+  const qotdIdx = body.search(/(?:💭❔)?QOTD:/);
   const ratingIdx = body.search(/[⭐️]+/);
   const endIdx = ratingIdx !== -1 ? ratingIdx : qotdIdx !== -1 ? qotdIdx : body.length;
   const reviewSection = body.slice(0, endIdx);

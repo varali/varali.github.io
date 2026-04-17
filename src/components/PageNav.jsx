@@ -1,19 +1,25 @@
+import { useLocation } from "react-router-dom";
 import styles from "./PageNav.module.css";
 import Logo from "./Logo";
 
 function PageNav() {
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
+
+  const link = (anchor) => isHome ? `#${anchor}` : `/#${anchor}`;
+
   return (
     <nav className={styles.nav}>
       <Logo />
       <ul>
         <li>
-          <a href="#about">About</a>
+          <a href={link("about")}>About</a>
         </li>
         <li>
-          <a href="#reviews">Reviews</a>
+          <a href={link("reviews")}>Reviews</a>
         </li>
         <li>
-          <a href="#projects">Projects</a>
+          <a href={link("projects")}>Projects</a>
         </li>
       </ul>
     </nav>

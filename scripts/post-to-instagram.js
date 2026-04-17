@@ -51,17 +51,17 @@ function extractSpice(body) {
 
 function extractTropes(body) {
   const ratingIdx = body.search(/[⭐️]+/);
-  const qotdIdx = body.search(/💭❔QOTD:/);
+  const qotdIdx = body.search(/(?:💭❔)?QOTD:/);
   if (ratingIdx === -1 || qotdIdx === -1) return [];
   return body
     .slice(ratingIdx, qotdIdx)
     .split("\n")
     .map((l) => l.trim())
-    .filter((l) => l && !l.match(/[⭐️🌶️🤎]/));
+    .filter((l) => l && !l.match(/[⭐🌶🤎❤]/u));
 }
 
 function extractQOTD(body) {
-  const match = body.match(/💭❔QOTD:\s*(.+)/);
+  const match = body.match(/(?:💭❔)?QOTD:\s*(.+)/);
   return match ? match[1].trim() : null;
 }
 
