@@ -6,6 +6,7 @@ import Schedule from "./pages/Schedule";
 import Journal from "./pages/Journal";
 import Sanctum from "./pages/Sanctum";
 import Reviews from "./pages/Reviews";
+import ReviewDetail from "./pages/ReviewDetail";
 import LoginModal from "./components/LoginModal";
 import { useSpellCode } from "./hooks/useSpellCode";
 import { useAuth } from "./hooks/useAuth";
@@ -46,6 +47,7 @@ function AppContent() {
       <Routes>
         <Route index element={<Homepage />} />
         <Route path="reviews" element={<Reviews />} />
+        <Route path="reviews/:slug" element={<ReviewDetail />} />
         <Route
           path="sanctum"
           element={

@@ -1,0 +1,242 @@
+.page {
+  min-height: 100vh;
+  background-color: var(--color-forest--deep);
+}
+
+.content {
+  max-width: 110rem;
+  margin: 0 auto;
+  padding: 10rem 4rem 8rem;
+}
+
+.back {
+  margin-bottom: 4rem;
+}
+
+.backLink {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: var(--color-text--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.backLink:hover {
+  color: var(--color-text--primary);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 28rem 1fr;
+  gap: 8rem;
+  align-items: start;
+}
+
+.sidebar {
+  position: sticky;
+  top: 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.cover {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  background-color: var(--color-forest--mid);
+  border: 1px solid var(--color-border);
+}
+
+.coverImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.coverPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 40%,
+    rgba(107, 63, 160, 0.15) 0%,
+    transparent 70%
+  );
+}
+
+.coverGlyph {
+  font-size: 3rem;
+  color: var(--color-purple--soft);
+  opacity: 0.2;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.ratings {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.stars,
+.spice {
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+}
+
+.tropes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.tropesLabel {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text--faint);
+  margin-bottom: 0.2rem;
+}
+
+.trope {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: var(--color-purple--soft);
+  background-color: rgba(140, 122, 160, 0.1);
+  border: 1px solid rgba(140, 122, 160, 0.2);
+  padding: 0.4rem 1rem;
+  display: inline-block;
+  width: fit-content;
+}
+
+.date {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: var(--color-text--faint);
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.openingQuote {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--color-text--muted);
+  border-left: 2px solid var(--color-purple--mid);
+  padding-left: 2rem;
+  margin-bottom: 3.2rem;
+  line-height: 1.7;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(3.5rem, 5vw, 5.5rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--color-text--primary);
+  line-height: 1.1;
+  margin-bottom: 0.8rem;
+}
+
+.author {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text--faint);
+  margin-bottom: 4rem;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+}
+
+.paragraph {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--color-text--muted);
+}
+
+.divider {
+  font-size: 1.4rem;
+  text-align: center;
+  padding: 2rem 0;
+  opacity: 0.4;
+}
+
+.qotd {
+  margin-top: 4rem;
+  padding: 2.4rem;
+  background-color: var(--color-forest--mid);
+  border: 1px solid var(--color-border);
+  display: flex;
+  gap: 1.6rem;
+  align-items: flex-start;
+}
+
+.qotdLabel {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.qotdText {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--color-text--muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 8rem 2rem 6rem;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .sidebar {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .cover {
+    width: 14rem;
+    flex-shrink: 0;
+  }
+
+  .meta {
+    flex: 1;
+    min-width: 16rem;
+  }
+}

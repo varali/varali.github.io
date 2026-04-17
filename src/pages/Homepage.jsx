@@ -180,6 +180,70 @@ export default function Homepage() {
           </div>
         )}
       </section>
+
+      <section className={styles.projects} id="projects">
+        <div className={styles.sectionHeader}>
+          <div>
+            <span className={styles.sectionEyebrow}>✦ projects</span>
+            <h2 className={styles.sectionHeading}>
+              things I&apos;ve <em>built</em>
+            </h2>
+          </div>
+          <a
+            href="https://github.com/varali"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.seeAll}
+          >
+            github →
+          </a>
+        </div>
+
+        <div className={styles.projectsList}>
+          <a
+            href="https://github.com/varali/varali.github.io"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.projectRow}
+          >
+            <div className={styles.projectInfo}>
+              <h3 className={styles.projectName}>this website</h3>
+              <p className={styles.projectDesc}>
+                a personal hub for dev work and bookstagram content — built with react, vite, and github pages
+              </p>
+            </div>
+            <span className={styles.projectArrow}>→</span>
+          </a>
+
+          <a
+            href="https://github.com/varali"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.projectRow}
+          >
+            <div className={styles.projectInfo}>
+              <h3 className={styles.projectName}>instagram unfollower tracker</h3>
+              <p className={styles.projectDesc}>
+                detects unfollows between sessions for bookstagram growth analytics
+              </p>
+            </div>
+            <span className={styles.projectArrow}>→</span>
+          </a>
+
+          <div className={styles.projectRow} data-wip>
+            <div className={styles.projectInfo}>
+              <h3 className={styles.projectName}>
+                bookstagram review pipeline
+                <span className={styles.wip}>in progress</span>
+              </h3>
+              <p className={styles.projectDesc}>
+                write once in markdown, cross-post to instagram, tiktok, fable, and goodreads automatically
+              </p>
+            </div>
+            <span className={styles.projectArrow}>→</span>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

@@ -283,3 +283,99 @@
     gap: 1.2rem;
   }
 }
+
+.projects {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 8rem 4rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.projectsList {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--color-border);
+}
+
+.projectRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 2.8rem 0;
+  border-bottom: 1px solid var(--color-border);
+  text-decoration: none;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+a.projectRow:hover {
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  margin-left: -1.2rem;
+  margin-right: -1.2rem;
+  background-color: rgba(54, 70, 66, 0.4);
+}
+
+a.projectRow:hover .projectArrow {
+  color: var(--color-purple--soft);
+  transform: translateX(4px);
+}
+
+.projectInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.projectName {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-text--primary);
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.projectDesc {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: var(--color-text--faint);
+  line-height: 1.6;
+  max-width: 60rem;
+}
+
+.projectArrow {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  color: var(--color-text--faint);
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.wip {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-purple--soft);
+  background-color: rgba(140, 122, 160, 0.1);
+  border: 1px solid rgba(140, 122, 160, 0.25);
+  padding: 0.2rem 0.8rem;
+}
+
+@media (max-width: 600px) {
+  .projects {
+    padding: 6rem 2rem;
+  }
+
+  .projectRow {
+    align-items: flex-start;
+  }
+}

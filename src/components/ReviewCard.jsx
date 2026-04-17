@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./ReviewCard.module.css";
+import { toSlug } from "../utils/slugUtils";
 
 function Stars({ count }) {
   return (
@@ -18,10 +19,7 @@ function Spice({ count }) {
 }
 
 export default function ReviewCard({ review }) {
-  const slug = review.title
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "");
+  const slug = toSlug(review.title);
 
   return (
     <Link to={`/reviews/${slug}`} className={styles.card}>

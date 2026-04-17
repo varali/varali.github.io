@@ -79,6 +79,18 @@ function extractOptionalQuote(body) {
   return { quote: null, summary: before, rest: afterDivider };
 }
 
+function extractParagraphs(body) {
+  const qotdIdx = body.search(/💭❔QOTD:/);
+  const ratingIdx = body.search(/[⭐️]+/);
+  const endIdx = ratingIdx !== -1 ? ratingIdx : qotdIdx !== -1 ? qotdIdx : body.length;
+  const reviewSection = body.slice(0, endIdx);
+
+  return reviewSection
+    .split("🤎")
+    .map((p) => p.trim())
+    .filter((p) => p.length > 0);
+}
+
 export function parseReview(raw) {
   const { meta, body } = parseFrontMatter(raw);
   const stars = extractStars(body);
@@ -86,6 +98,7 @@ export function parseReview(raw) {
   const tropes = extractTropes(body);
   const qotd = extractQOTD(body);
   const firstLine = extractFirstLine(body);
+  const paragraphs = extractParagraphs(body);
   const { quote } = extractOptionalQuote(body) || {};
 
   return {
@@ -98,6 +111,7 @@ export function parseReview(raw) {
     tropes,
     qotd,
     firstLine,
+    paragraphs,
     quote: quote || null,
     body,
   };
