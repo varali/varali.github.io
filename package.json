@@ -8,11 +8,10 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "server": "json-server --watch data/cities.json --port 8000"
+    "caption": "node scripts/format-caption.js",
+    "post-review": "node scripts/post-to-instagram.js"
   },
   "dependencies": {
-    "json-server": "^1.0.0-beta.3",
-    "mapbox-gl": "^3.10.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.6.2"

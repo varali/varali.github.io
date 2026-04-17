@@ -3,6 +3,7 @@ title: "Wretched Mage"
 author: "J.B. Pinheiro"
 cover: "/reviews/wretched-mage.jpg"
 date: "2026-04-16"
+publish: true
 ---
 
 After accidentally getting off at the wrong train stop, Jane stumbles into a forest and straight into mage territory, something that should be impossible for a human. A large beast drags her back to a mysterious manor, and what follows is a year of captivity, unanswered questions, and a romance that absolutely delivers.

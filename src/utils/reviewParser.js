@@ -24,9 +24,10 @@ function extractStars(body) {
 }
 
 function extractSpice(body) {
-  const match = body.match(/[🌶️]+/);
+  const match = body.match(/^((?:🌶(?:️)?)+|❤️)$/m);
   if (!match) return 0;
-  return countEmoji(match[0], "🌶️");
+  if (match[0] === "❤️") return 0;
+  return (match[0].match(/🌶/g) || []).length;
 }
 
 function extractTropes(body) {

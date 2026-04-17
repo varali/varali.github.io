@@ -1,0 +1,50 @@
+name: Post Review to Instagram
+
+on:
+  push:
+    branches:
+      - develop
+    paths:
+      - 'src/data/reviews/**.md'
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Get changed review files
+        id: changed
+        run: |
+          CHANGED=$(git diff --name-only HEAD~1 HEAD -- 'src/data/reviews/**.md' | head -1)
+          echo "file=$CHANGED" >> $GITHUB_OUTPUT
+          echo "Changed review file: $CHANGED"
+
+      - name: Check if file has publish flag
+        id: check
+        if: steps.changed.outputs.file != ''
+        run: |
+          FILE="${{ steps.changed.outputs.file }}"
+          if grep -q "^publish: true" "$FILE"; then
+            echo "should_post=true" >> $GITHUB_OUTPUT
+            echo "Publishing: $FILE"
+          else
+            echo "should_post=false" >> $GITHUB_OUTPUT
+            echo "No publish flag — skipping."
+          fi
+
+      - name: Post to Instagram
+        if: steps.check.outputs.should_post == 'true'
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          SITE_URL: https://varali.github.io
+        run: node scripts/post-to-instagram.js "${{ steps.changed.outputs.file }}"
