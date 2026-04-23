@@ -6,8 +6,8 @@ function Logo() {
   const href = pathname === "/" ? "#" : "/";
 
   return (
-    <a href={href}>
-      <img src="/logo-name.png" alt="feigned poet" className={styles.logo} />
+    <a href={href} className={styles.logo}>
+      feigned <em>poet</em>
     </a>
   );
 }

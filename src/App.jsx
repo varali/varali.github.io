@@ -7,6 +7,7 @@ import Journal from "./pages/Journal";
 import Sanctum from "./pages/Sanctum";
 import Reviews from "./pages/Reviews";
 import ReviewDetail from "./pages/ReviewDetail";
+import Scriptorium from "./pages/Scriptorium";
 import LoginModal from "./components/LoginModal";
 import { useSpellCode } from "./hooks/useSpellCode";
 import { useAuth } from "./hooks/useAuth";
@@ -56,6 +57,7 @@ function AppContent() {
         <Route index element={<Homepage />} />
         <Route path="reviews" element={<Reviews />} />
         <Route path="reviews/:slug" element={<ReviewDetail />} />
+        <Route path="scriptorium" element={<Scriptorium />} />
         <Route
           path="sanctum"
           element={
